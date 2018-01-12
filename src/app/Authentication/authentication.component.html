@@ -1,0 +1,21 @@
+<div class="container fundo">
+  <div class="col-12 text-center">
+      <div class="col-1"></div>
+      <div class="col-4 offset-lg-4 form-signin">
+          <h1 class="title academico-font text-center">KiFome</h1>
+          <hr class="line"/>
+          <div class="form-group" id="group-login">
+              <label for="inputMatricula" class="sr-only">Email</label>
+              <input type="text" id="inputMatricula" class="form-control input-sm text-center" [(ngModel)]="authentication.email"  placeholder="Email" required >
+              <label for="inputPassword" class="sr-only">Senha</label>
+              <input type="password" id="inputPassword" class="form-control input-sm text-center" [(ngModel)]="authentication.password" placeholder="Senha" required>
+          </div>
+          <br />
+
+          <button class="btn btn-sm btn-sa btn-block offset-lg-2" (click)="Authenticate(authentication)" id="button-login">Acessar</button>
+          <br>
+      
+      </div>
+      <div class="col-lg-1"></div>
+  </div>
+</div> <!-- /container -->

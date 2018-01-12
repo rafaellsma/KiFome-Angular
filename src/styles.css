@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.img-logo{
+    width: 150px;
+    height: 55px;
+    margin-left:5px;
+}
+
+.logo-name{
+    font-size:25px;
+    color:black;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+}
+
+#hrNav{
+    border-bottom: 2px solid #D3D3D3;
+}
+.navbar{
+    padding: 0;
+}
