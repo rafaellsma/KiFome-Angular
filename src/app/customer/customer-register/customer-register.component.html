@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>Cadastrar Clientes</h3>
+  <hr>
+  <div class=" col-lg-6">
+      <div class="col-lg-10">
+        <label for="">Nome Completo</label>
+        <input type="text" class="input-sm form-control" [(ngModel)]="customer.name" placeholder="Nome Completo">
+      </div>
+      <div class="col-lg-10">
+          <label for="">Email</label>
+          <input type="text" class="input-sm form-control" [(ngModel)]="customer.email" placeholder="Email">
+      </div>
+      <div class="col-lg-10">
+          <label for="">Senha</label>
+          <input type="password" class="input-sm form-control" [(ngModel)]="customer.password" placeholder="Senha">
+      </div>
+  </div>
+  <br>
+  <div class="col-lg-6 offset-lg-1">
+      <button class="btn btn-register" [disabled]="!customer.name || !customer.email || !customer.password" (click)="registerCustomer(customer)">Salvar</button>
+      <button class="btn btn-voltar">Voltar</button>
+  </div>
+</div>
