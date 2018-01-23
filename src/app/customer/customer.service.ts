@@ -5,16 +5,21 @@ import { RequestOptions } from '@angular/http';
 import {Observable} from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
+import { Customer } from '../models/customer';
 
 
 @Injectable()
-export class AuthenticationService {
+export class CustomerService {
     constructor(private http: Http) {}
    
-    Authenticate(authentication: Authentication){
-    
-        return this.http.post("http://localhost:49849/api/authentication", authentication)
+    public GetCustomers(){
+        return this.http.get("http://localhost:49849/api/user")
                  .map(r => r.json());
+    }
+
+    public RegisterCustomers(customer:Customer){
+        return this.http.post("http://localhost:49849/api/user", customer)
+               .map(r => r);
     }
 
 }

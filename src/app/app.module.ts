@@ -4,7 +4,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { AuthenticationModule } from './Authentication/authentication.module';
+import { AuthenticationModule } from './authentication/authentication.module';
+import { routing } from './app.routing';
+import { CustomerModule } from './customer/customer.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { AuthenticationModule } from './Authentication/authentication.module';
   ],
   imports: [
     BrowserModule,
-    AuthenticationModule
+    AuthenticationModule,
+    CustomerModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

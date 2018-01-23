@@ -1,0 +1,26 @@
+.btn-register{
+    width: 120px;
+    background-color: #1E90FF;
+    color: white;
+}
+.btn-register:hover{
+    background-color: #00BFFF;
+    color: white;
+    font-weight: bold;
+    width: 120px;
+    box-shadow: 1px 1px 20px #1E90FF;
+}
+
+.btn-voltar{
+    width: 120px;
+    background-color: rgb(179, 181, 182);
+    color: white;
+}
+
+.btn-voltar:hover{
+    font-weight: bold;
+    width: 120px;
+    background-color: rgb(113, 116, 117);
+    color: white;
+    box-shadow: 1px 1px 20px rgb(132, 136, 138);
+}
