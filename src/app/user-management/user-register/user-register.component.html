@@ -1,30 +1,24 @@
 <div class="container">
-  <div class="formulario-header">
-      <h3><i class="glyphicon glyphicon-pencil"></i>Cadastrar Usuário</h3>
-      <hr>
-  </div>
-  <br>
-  <div class="col-12 offset-4">
-    <div class="col-lg-4">
-      <label for=""><strong>Nome Completo:</strong></label>
-      <input type="text" class="input-sm form-control" placeholder="Nome Completo">
+    <div class="col-12 text-center">
+        <div class="col-4 offset-4">
+            <mat-card>
+                <h1>Cadastrar Usuário</h1>
+                <mat-divider></mat-divider>
+                <mat-form-field class="full-width" floatLabel="never">
+                    <input type="text" matInput placeholder="Nome">
+                </mat-form-field>
+                <mat-form-field class="full-width" floatLabel="never">
+                    <input type="text" matInput placeholder="Email">
+                </mat-form-field>
+                <mat-form-field class="full-width" floatLabel="never">
+                    <input type="password" matInput placeholder="Senha">
+                </mat-form-field>
+                <mat-form-field class="full-width" floatLabel="never">
+                    <input type="password" matInput placeholder="Confirme a senha">
+                </mat-form-field>
+                <button mat-raised-button color="primary">Salvar</button>
+                <button mat-button>Voltar</button>  
+            </mat-card>
+        </div>
     </div>
-    <div class="col-lg-4">
-        <label for=""><strong>Email:</strong></label>
-        <input type="text" class="input-sm form-control" placeholder="Email">
-    </div>
-    <div class="col-lg-4">
-        <label for=""><strong>Senha:</strong></label>
-        <input type="text" class="input-sm form-control" placeholder="Senha">
-    </div>
-    <div class="col-lg-4">
-        <label for=""><strong>Confirmar Senha:</strong></label>
-        <input type="text" class="input-sm form-control" placeholder="Confirmar Senha">
-    </div>
-  </div>
-  <br>
-  <div class="col-12 offset-4">
-      <button class="btn btn-salvar">Salvar</button>
-      <button class="btn btn-voltar">Voltar</button>  
-  </div>
 </div>
