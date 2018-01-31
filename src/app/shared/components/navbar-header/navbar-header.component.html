@@ -1,11 +1,24 @@
 <nav class="navbar">
-    <div class="container">
-        <h1 class="logo"><a href="#">KiFome</a></h1>
-        <ul class="nav nav-right">
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Cozinheiros</a></li>
-        <li><a href="#">Pedidos</a></li>
-        <li><a href="#">Contato</a></li>
-        </ul>
+    <div class="row">
+        <div class="col-4 logo">
+            <h1 class="logo headline"><a href="#">KiFome</a></h1>
+        </div>
+        <div class="col-8 items">
+            <ul class="hide-small">
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Cozinheiros</a></li>
+                <li><a href="#">Pedidos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+            <div class="show-small">
+                <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+                <mat-menu #menu="matMenu">
+                    <a mat-menu-item href="#">Sobre</a>
+                    <a mat-menu-item href="#">Cozinheiros</a>
+                    <a mat-menu-item href="#">Pedidos</a>
+                    <a mat-menu-item href="#">Contato</a>
+                </mat-menu>
+            </div>
+        </div>
     </div>
 </nav>
