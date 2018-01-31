@@ -7,6 +7,7 @@ import { UserManagementModule } from './user-management/user-management.module';
 import { NavbarHeaderComponent } from './shared/components/navbar-header/navbar-header.component';
 import { AppRouting } from './app.routing';
 import { MaterialModule } from './material/material.module';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -19,7 +20,8 @@ import { MaterialModule } from './material/material.module';
     BrowserModule,
     UserManagementModule,
     RouterModule,
-    AppRouting
+    AppRouting,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
