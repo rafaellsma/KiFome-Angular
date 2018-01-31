@@ -1,0 +1,35 @@
+.formulario-header{
+    margin-top:50px;
+}
+
+.btn-salvar {
+    background-color: #EEE8AA;
+    color: #696969;
+    font-weight: bold;
+    font-size: 14px;
+    width: 144px;
+    margin-left:30px;
+}
+.btn-salvar:hover {
+    background-color: #00BFFF;
+    color: white;
+    font-weight: bold;
+    width: 144px;
+    box-shadow: 1px 1px 20px #1E90FF;
+}
+
+.btn-voltar{
+    background-color: #EEE8AA;
+    color: #696969;
+    font-weight: bold;
+    font-size: 14px;
+    width: 144px;
+}
+
+   
+.btn-voltar:hover {
+    background-color: rgb(206, 11, 11);
+    color: white;
+    font-weight: bold;
+    box-shadow: 1px 1px 20px rgb(206, 11, 11);
+}

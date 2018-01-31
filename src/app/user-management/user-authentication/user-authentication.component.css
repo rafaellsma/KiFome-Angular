@@ -1,0 +1,57 @@
+/*body {
+    
+    background-image: url('../img/imagems.jpg');
+}*/
+
+.form-signin {
+    margin-top:111px;
+    border: 1px solid #808080;
+    box-shadow: 1px 1px 10px black;
+    background-color: white;
+    padding-top:10px;
+}
+
+.btn-acessar {
+    background-color: #EEE8AA;
+    color: #696969;
+    font-weight: bold;
+    font-size: 14px;
+    /* width: 220px; */
+    width: 144px;
+}
+
+    .btn-acessar:hover {
+        background-color: #00BFFF;
+        color: white;
+        font-weight: bold;
+        width: 144px;
+        box-shadow: 1px 1px 20px #1E90FF;
+    }
+
+    .btn-cadastrar {
+        background-color: #EEE8AA;
+        color: #696969;
+        font-weight: bold;
+        font-size: 14px;
+        width: 144px;
+        /* width: 220px; */
+    }
+    
+        .btn-cadastrar:hover {
+            background-color: rgb(206, 11, 11);
+            color: white;
+            font-weight: bold;
+            box-shadow: 1px 1px 20px rgb(206, 11, 11);
+        }
+
+.kifome-font {
+    font-weight: bold;
+}
+
+.line {
+    border-bottom: 2px solid #C0C0C0;
+}
+
+.input-email {
+    margin-bottom: 3px;
+}
