@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { UserManagementModule } from './user-management/user-management.module';
 import { NavbarHeaderComponent } from './shared/components/navbar-header/navbar-header.component';
 import { AppRouting } from './app.routing';
+import { MaterialModule } from './material/material.module';
 
 
 
@@ -18,7 +19,8 @@ import { AppRouting } from './app.routing';
     BrowserModule,
     UserManagementModule,
     RouterModule,
-    AppRouting
+    AppRouting,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
