@@ -3,11 +3,12 @@ import { UserAuthenticationComponent } from './user-management/user-authenticati
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserRegisterComponent } from './user-management/user-register/user-register.component';
+import { UserManagementComponent } from './user-management/user-management.component';
 
 const appRouting: Routes =
 [
     {
-        path: '', component: UserAuthenticationComponent
+        path: '', component: UserManagementComponent
     },
     {
         path: 'cadastrar-usuario', component: UserRegisterComponent
