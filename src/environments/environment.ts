@@ -6,3 +6,5 @@
 export const environment = {
   production: false
 };
+
+export const URL: String = "http://localhost:49849";

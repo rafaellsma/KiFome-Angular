@@ -6,6 +6,9 @@ import { UserManagementModule } from './user-management/user-management.module';
 import { AppRouting } from './app.routing';
 import { MaterialModule } from './material/material.module';
 import { SharedModule } from './shared/shared.module';
+import { HomePageModule } from './home-page/home-page.module';
+import { MenuManagementModule } from './menu-management/menu-management.module';
+
 
 
 
@@ -16,9 +19,11 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     UserManagementModule,
+    HomePageModule,
     RouterModule,
     AppRouting,
-    SharedModule
+    SharedModule,
+    MenuManagementModule
   ],
   providers: [],
   bootstrap: [AppComponent]
