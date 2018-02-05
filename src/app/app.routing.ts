@@ -7,6 +7,7 @@ import { UserManagementComponent } from './user-management/user-management.compo
 import { HomePageComponent } from './home-page/home-page.component';
 import { MealManagementComponent } from './menu-management/meal-management/meal-management.component';
 import { MenuManagementComponent } from './menu-management/menu-management.component';
+import { ListGarnishesComponent } from './garnish-management/list-garnishes/list-garnishes.component';
 
 
 const appRouting: Routes =
@@ -25,6 +26,9 @@ const appRouting: Routes =
     },
     {
         path: 'menu', component: MenuManagementComponent
+    },
+    {
+        path: 'acompanhamentos', component: ListGarnishesComponent
     }
 ];
 

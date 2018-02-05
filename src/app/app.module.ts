@@ -8,6 +8,7 @@ import { MaterialModule } from './material/material.module';
 import { SharedModule } from './shared/shared.module';
 import { HomePageModule } from './home-page/home-page.module';
 import { MenuManagementModule } from './menu-management/menu-management.module';
+import { GarnishManagementModule } from './garnish-management/garnish-management.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MenuManagementModule } from './menu-management/menu-management.module';
     RouterModule,
     AppRouting,
     SharedModule,
-    MenuManagementModule
+    MenuManagementModule,
+    GarnishManagementModule
   ],
   providers: [],
   bootstrap: [AppComponent]
