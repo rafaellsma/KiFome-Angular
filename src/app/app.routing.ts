@@ -12,13 +12,10 @@ import { MenuManagementComponent } from './menu-management/menu-management.compo
 const appRouting: Routes =
 [
     {
-        path: '', component: UserManagementComponent
+        path: 'gerenciamento-usuario', component: UserManagementComponent
     },
     {
-        path: 'cadastrar-usuario', component: UserRegisterComponent
-    },
-    {
-        path: 'pagina-inicial', component: HomePageComponent
+        path: '', component: HomePageComponent
     },
     {
         path: 'prato', component: MealManagementComponent

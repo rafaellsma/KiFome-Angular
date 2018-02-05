@@ -20,7 +20,7 @@ import { UserManagementService } from './user-management.service';
     UserAuthenticationComponent,
     UserRegisterComponent
   ],
-  providers:[
+  providers: [
     UserManagementService
   ]
 })
