@@ -8,9 +8,9 @@ import { User } from "../shared/models/user";
 @Injectable()
 export class UserManagementService {
 
-    constructor(private http: HttpClient){}
-
-    authenticate(authentication: Authentication): Observable<User>{
-        return this.http.post<User>("", authentication);
+    constructor(private http: HttpClient) {}
+  
+    authenticate(authentication: Authentication): Observable<User> {
+        return this.http.post<User>("http://localhost:49849/api/user", authentication);
     }
 }

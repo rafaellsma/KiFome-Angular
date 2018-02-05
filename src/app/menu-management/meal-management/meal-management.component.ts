@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource, MatDialog } from '@angular/material';
+import { ModalListGarnishComponent } from './modal-list-garnish/modal-list-garnish.component';
 
 @Component({
   selector: 'app-meal-management',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meal-management.component.css']
 })
 export class MealManagementComponent implements OnInit {
+  displayedColumns = ['pratos', 'descricao', 'preco', 'dias', 'guarnicoes'];
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
+  openDialog() {
+    const dialogRef = this.dialog.open(ModalListGarnishComponent, {
+      width: '250px'
+    });
+  }
 }
+
+const ELEMENT_DATA = [
+  {pratos: 1, descricao: 'Hydrogen', preco: 1.0079, dias: 'H'},
+  {pratos: 2, descricao: 'Helium', preco: 4.0026, dias: 'He'},
+  {pratos: 3, descricao: 'Lithium', preco: 6.941, dias: 'Li'}
+];

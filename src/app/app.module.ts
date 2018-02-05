@@ -9,9 +9,6 @@ import { SharedModule } from './shared/shared.module';
 import { HomePageModule } from './home-page/home-page.module';
 import { MenuManagementModule } from './menu-management/menu-management.module';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent

@@ -1,3 +1,47 @@
-<p>
-  meal-management works!
-</p>
+<div class="container">
+  <div class="top-header">
+      <h2>Pratos</h2>
+      <hr>
+  </div>
+  <br>
+  <div class="example-container mat-elevation-z8">
+      <mat-table #table [dataSource]="dataSource">
+    
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+    
+        <!-- Position Column -->
+        <ng-container matColumnDef="pratos">
+          <mat-header-cell *matHeaderCellDef> Pratos</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.pratos}} </mat-cell>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="descricao">
+          <mat-header-cell *matHeaderCellDef> Descrição </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.descricao}} </mat-cell>
+        </ng-container>
+    
+        <!-- Weight Column -->
+        <ng-container matColumnDef="preco">
+          <mat-header-cell *matHeaderCellDef> Preço </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.preco}} </mat-cell>
+        </ng-container>
+    
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="dias">
+          <mat-header-cell *matHeaderCellDef> Dias Disponíveis </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.dias}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="guarnicoes">
+            <mat-header-cell *matHeaderCellDef> Guarnições </mat-header-cell>
+            <mat-cell *matCellDef="let element"> <a href="javascript:void(0)" (click)="openDialog()">Ver Guarnições</a> </mat-cell>
+         </ng-container>
+      
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+</div>
