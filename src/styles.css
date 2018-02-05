@@ -10,3 +10,8 @@ body {
     background-color: #F7F49E;
     margin: 0px;
 }
+
+h1, h2, h3 {
+    color: #47525E;
+    font-family:'Roboto';
+}
