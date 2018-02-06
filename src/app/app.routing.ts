@@ -8,18 +8,17 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { MealManagementComponent } from './menu-management/meal-management/meal-management.component';
 import { MenuManagementComponent } from './menu-management/menu-management.component';
 import { ListGarnishesComponent } from './garnish-management/list-garnishes/list-garnishes.component';
+import { ProfileComponent } from './profile/profile.component';
+
 
 
 const appRouting: Routes =
 [
     {
-        path: '', component: UserManagementComponent
+        path: 'gerenciamento-usuario', component: UserManagementComponent
     },
     {
-        path: 'cadastrar-usuario', component: UserRegisterComponent
-    },
-    {
-        path: 'pagina-inicial', component: HomePageComponent
+        path: '', component: HomePageComponent
     },
     {
         path: 'prato', component: MealManagementComponent
@@ -29,6 +28,9 @@ const appRouting: Routes =
     },
     {
         path: 'acompanhamentos', component: ListGarnishesComponent
+    },
+    {
+         path: 'perfil', component: ProfileComponent
     }
 ];
 
