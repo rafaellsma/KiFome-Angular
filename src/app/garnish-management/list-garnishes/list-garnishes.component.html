@@ -1,3 +1,34 @@
-<p>
-  list-garnishes works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Cadastrar Acompanhamentos</h2>
+      <mat-divider style="margin-bottom: 20px;"></mat-divider>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="mat-elevation-z8">
+          <mat-table #table [dataSource]="garnishesDataSource">
+            
+            <ng-container matColumnDef="Name">
+              <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+              <mat-cell *matCellDef="let garnish"> {{garnish.Name}} </mat-cell>
+            </ng-container>
+      
+            <ng-container matColumnDef="Description">
+              <mat-header-cell *matHeaderCellDef> Descrição </mat-header-cell>
+              <mat-cell *matCellDef="let garnish"> {{garnish.Description}} </mat-cell>
+            </ng-container>
+      
+            <mat-header-row *matHeaderRowDef="garnishesAttributes"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: garnishesAttributes"></mat-row>
+          </mat-table>
+        </div>
+    </div>
+  </div>
+  <div class="row justify-content-end" style="margin-top: 40px">
+    <div class="col-auto">
+      <button mat-raised-button color="primary">Adicionar Guarnições</button>
+    </div>  
+  </div>
+</div>
