@@ -8,6 +8,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { MealManagementComponent } from './menu-management/meal-management/meal-management.component';
 import { MenuManagementComponent } from './menu-management/menu-management.component';
 import { ProfileComponent } from './profile/profile.component';
+import { OrderComponent } from './order/order.component';
 
 
 const appRouting: Routes =
@@ -26,6 +27,9 @@ const appRouting: Routes =
     },
     {
         path: 'perfil', component: ProfileComponent
+    },
+    {
+        path: 'pedido', component: OrderComponent
     }
 ];
 

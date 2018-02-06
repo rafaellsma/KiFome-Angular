@@ -1,0 +1,43 @@
+<mat-horizontal-stepper linear>
+  <mat-step label="Escolha o Cozinheiro">
+    <h1>Cozinheiros</h1>
+    <div *ngFor="let seller of sellers">
+        <mat-radio-group>
+          <mat-radio-button [value]="seller.id">
+            <app-seller [seller]="seller"></app-seller>
+          </mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <br>
+    <div>
+        <button mat-raised-button matStepperNext color="primary">Próximo</button>
+    </div>
+  </mat-step>
+  <mat-step label="Escolha o Local para Buscar">
+      <h1>Locais</h1>
+      <div>
+          <button mat-button matStepperPrevious color="primary">Anterior</button>
+          <button mat-raised-button matStepperNext color="primary">Próximo</button>
+      </div>
+    </mat-step>
+  <mat-step label="Escolha o Prato">
+    <h1>Pratos</h1>
+    <div>
+        <button mat-button matStepperPrevious color="primary">Anterior</button>
+        <button mat-raised-button matStepperNext color="primary">Próximo</button>
+    </div>
+  </mat-step>
+  <mat-step label="Escolha os Acompanhamentos">
+    <h1>Acompanhamentos</h1>
+    <div>
+        <button mat-button matStepperPrevious color="primary">Anterior</button>
+        <button mat-raised-button matStepperNext color="primary">Próximo</button>
+    </div>
+  </mat-step>
+  <mat-step label="Revise seu Pedido">
+    <h1>Revisão</h1>
+    <div>
+        <button mat-button matStepperPrevious color="primary">Anterior</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

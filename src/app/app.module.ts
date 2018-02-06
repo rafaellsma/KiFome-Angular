@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomePageModule } from './home-page/home-page.module';
 import { MenuManagementModule } from './menu-management/menu-management.module';
 import { ProfileModule } from './profile/profile.module';
+import { OrderModule } from './order/order.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProfileModule } from './profile/profile.module';
     AppRouting,
     SharedModule,
     MenuManagementModule,
-    ProfileModule
+    ProfileModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
