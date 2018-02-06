@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomePageModule } from './home-page/home-page.module';
 import { MenuManagementModule } from './menu-management/menu-management.module';
 import { GarnishManagementModule } from './garnish-management/garnish-management.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GarnishManagementModule } from './garnish-management/garnish-management
     AppRouting,
     SharedModule,
     MenuManagementModule,
-    GarnishManagementModule
+    GarnishManagementModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

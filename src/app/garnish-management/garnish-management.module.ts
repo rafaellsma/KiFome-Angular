@@ -4,15 +4,18 @@ import { ListGarnishesComponent } from './list-garnishes/list-garnishes.componen
 import { MaterialModule } from '../material/material.module';
 import { GarnishService } from './garnish.service';
 import { CreateGarnishComponent } from './create-garnish/create-garnish.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   declarations: [ListGarnishesComponent, CreateGarnishComponent],
   providers: [
     GarnishService
-  ]
+  ],
+  entryComponents: [CreateGarnishComponent]
 })
 export class GarnishManagementModule { }

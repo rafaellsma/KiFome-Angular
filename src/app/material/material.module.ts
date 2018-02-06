@@ -11,7 +11,7 @@ import {
   MatMenuModule,
   MatIconModule,
   MatTableModule,
-  MatDialogModule
+  MatDialogModule,
 } from '@angular/material';
 
 @NgModule({
