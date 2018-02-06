@@ -4,6 +4,6 @@ export interface Meal {
     id: number;
     name: String;
     description: String;
-    Days: number;
+    Days: Array<String>;
     Garnishies: Array<Garnish>;
 }

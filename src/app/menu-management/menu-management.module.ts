@@ -7,16 +7,18 @@ import { MealUpdateComponent } from './meal-management/meal-update/meal-update.c
 import { MaterialModule } from '../material/material.module';
 import { ModalListGarnishComponent } from './meal-management/modal-list-garnish/modal-list-garnish.component';
 import { MenuManagementService } from './menu-management.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
-  declarations: [MenuManagementComponent, 
+  declarations: [MenuManagementComponent,
     MealManagementComponent,
-     MealRegisterComponent, 
-     MealUpdateComponent, 
+     MealRegisterComponent,
+     MealUpdateComponent,
      ModalListGarnishComponent ],
   providers:[
     MenuManagementService
