@@ -3,15 +3,15 @@
     <h2>Acesse a sua conta</h2>
     <mat-divider></mat-divider>
     <form [formGroup]="authForm" (ngSubmit)="authenticate()">
-        <div formGroupName="authentication">
+        <!-- <div formGroupName="authentication"> -->
             <mat-form-field class="full-width">
-                    <input matInput formControlName="email" type="text" placeholder="Email" required>
+                    <input matInput formControlName="Email" type="text" placeholder="Email" required>
             </mat-form-field>
             <mat-form-field class="full-width">
-                <input matInput formControlName="password" type="password" placeholder="Senha" required>
+                <input matInput formControlName="Password" type="password" placeholder="Senha" required>
             </mat-form-field>
             <button mat-raised-button class="full-width" color="primary">Acessar</button>
             <!-- <button mat-button>Cadastrar-se</button>   -->
-        </div>
+        <!-- </div> -->
     </form>
 </mat-card>

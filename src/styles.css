@@ -10,3 +10,14 @@ body {
     background-color: #F7F49E;
     margin: 0px;
 }
+
+.top-header{
+    margin-top:50px;
+}
+
+.titleH2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #47525E;
+    text-shadow: 1px 1px 1px #47525E;
+    margin-left:10px;
+}

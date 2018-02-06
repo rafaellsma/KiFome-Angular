@@ -6,12 +6,20 @@ import { MealRegisterComponent } from './meal-management/meal-register/meal-regi
 import { MealUpdateComponent } from './meal-management/meal-update/meal-update.component';
 import { MaterialModule } from '../material/material.module';
 import { ModalListGarnishComponent } from './meal-management/modal-list-garnish/modal-list-garnish.component';
+import { MenuManagementService } from './menu-management.service';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule
   ],
-  declarations: [MenuManagementComponent, MealManagementComponent, MealRegisterComponent, MealUpdateComponent, ModalListGarnishComponent ]
+  declarations: [MenuManagementComponent, 
+    MealManagementComponent,
+     MealRegisterComponent, 
+     MealUpdateComponent, 
+     ModalListGarnishComponent ],
+  providers:[
+    MenuManagementService
+  ]
 })
 export class MenuManagementModule { }

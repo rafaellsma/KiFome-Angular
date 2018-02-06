@@ -1,9 +1,10 @@
 <div class="container">
   <div class="top-header">
-      <h2>Pratos</h2>
+      <h2 class="titleH2">Pratos</h2>
       <hr>
   </div>
   <br>
+  <div class="col-12">
   <div class="example-container mat-elevation-z8">
       <mat-table #table [dataSource]="dataSource">
     
@@ -13,30 +14,30 @@
         <!-- Position Column -->
         <ng-container matColumnDef="pratos">
           <mat-header-cell *matHeaderCellDef> Pratos</mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.pratos}} </mat-cell>
+          <mat-cell *matCellDef="let prato"> {{prato.pratos}} </mat-cell>
         </ng-container>
     
         <!-- Name Column -->
         <ng-container matColumnDef="descricao">
           <mat-header-cell *matHeaderCellDef> Descrição </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.descricao}} </mat-cell>
+          <mat-cell *matCellDef="let prato"> {{prato.descricao}} </mat-cell>
         </ng-container>
     
         <!-- Weight Column -->
         <ng-container matColumnDef="preco">
           <mat-header-cell *matHeaderCellDef> Preço </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.preco}} </mat-cell>
+          <mat-cell *matCellDef="let prato"> {{prato.preco}} </mat-cell>
         </ng-container>
     
         <!-- Symbol Column -->
         <ng-container matColumnDef="dias">
           <mat-header-cell *matHeaderCellDef> Dias Disponíveis </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.dias}} </mat-cell>
+          <mat-cell *matCellDef="let prato"> {{prato.dias}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="guarnicoes">
             <mat-header-cell *matHeaderCellDef> Guarnições </mat-header-cell>
-            <mat-cell *matCellDef="let element"> <a href="javascript:void(0)" (click)="openDialog()">Ver Guarnições</a> </mat-cell>
+            <mat-cell *matCellDef="let prato"> <a href="javascript:void(0)" (click)="openDialog()">Ver Guarnições</a> </mat-cell>
          </ng-container>
       
     
@@ -44,4 +45,11 @@
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
       </mat-table>
     </div>
+    <br>
+    <div class="col-6 offset-4">
+        <button mat-raised-button (click)="addMeal()" color="primary">Adicionar Pratos</button>
+        <button mat-raised-button class="button-back" (click)="backHome()" color="primary">Voltar</button>  
+    </div>
+    
+  </div>
 </div>

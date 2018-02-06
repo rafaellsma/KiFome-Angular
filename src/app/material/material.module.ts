@@ -11,7 +11,9 @@ import {
   MatMenuModule,
   MatIconModule,
   MatTableModule,
-  MatDialogModule
+  MatDialogModule,
+  MatCheckboxModule,
+  MatListModule
 } from '@angular/material';
 
 @NgModule({
@@ -27,7 +29,9 @@ import {
     MatMenuModule,
     MatIconModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCheckboxModule,
+    MatListModule
   ],
   declarations: []
 })

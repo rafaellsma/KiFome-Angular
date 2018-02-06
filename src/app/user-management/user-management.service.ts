@@ -11,6 +11,6 @@ export class UserManagementService {
     constructor(private http: HttpClient) {}
   
     authenticate(authentication: Authentication): Observable<User> {
-        return this.http.post<User>("http://localhost:49849/api/user", authentication);
+        return this.http.post<User>("http://localhost:49849/api/authentication", authentication);
     }
 }
