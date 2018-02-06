@@ -25,7 +25,7 @@ const appRouting: Routes =
         path: 'menu', component: MenuManagementComponent
     },
     {
-        path: 'profile', component: ProfileComponent
+        path: 'perfil', component: ProfileComponent
     }
 ];
 
