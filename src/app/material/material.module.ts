@@ -12,6 +12,7 @@ import {
   MatIconModule,
   MatTableModule,
   MatDialogModule,
+  MatSnackBarModule,
 } from '@angular/material';
 
 @NgModule({
@@ -27,7 +28,8 @@ import {
     MatMenuModule,
     MatIconModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   declarations: []
 })

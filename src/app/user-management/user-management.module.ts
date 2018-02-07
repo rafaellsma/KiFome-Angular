@@ -13,7 +13,8 @@ import { UserManagementService } from './user-management.service';
     CommonModule,
     MaterialModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   declarations: [
     UserManagementComponent,
