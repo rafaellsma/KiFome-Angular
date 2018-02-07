@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Seller } from './seller/seller.model';
+import { OrderService } from './order.service';
 
 @Component({
   selector: 'app-order',
@@ -9,20 +10,13 @@ import { Seller } from './seller/seller.model';
 })
 export class OrderComponent implements OnInit {
 
-  sellers: Seller[] = [
-    {
-      id: 1,
-      name: 'Rafael Albuquerque',
-      rate: 5
-    },
-    {
-      id: 2,
-      name: 'Vinicius Santana',
-      rate: 5
-    }
-  ];
+  sellers: Seller[];
 
-  constructor() { }
+  constructor(private orderService: OrderService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.orderService.getAllSellers().subscribe((data) => {
+      this.sellers = data;
+    });
+  }
 }

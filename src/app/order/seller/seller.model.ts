@@ -1,5 +1,5 @@
 export interface Seller {
-    id: number;
-    name: string;
-    rate: number;
+    Id: number;
+    Name: string;
+    Rate: number;
 }

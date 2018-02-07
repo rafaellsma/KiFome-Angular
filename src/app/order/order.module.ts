@@ -4,6 +4,7 @@ import { OrderComponent } from './order.component';
 import { MaterialModule } from '../material/material.module';
 import { RouterModule } from '@angular/router';
 import { SellerComponent } from './seller/seller.component';
+import { OrderService } from './order.service';
 
 @NgModule({
     imports: [
@@ -11,6 +12,7 @@ import { SellerComponent } from './seller/seller.component';
         MaterialModule,
         RouterModule
     ],
-    declarations: [OrderComponent, SellerComponent]
+    declarations: [OrderComponent, SellerComponent],
+    providers: [OrderService]
 })
 export class OrderModule {}
