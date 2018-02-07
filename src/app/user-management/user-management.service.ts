@@ -9,8 +9,14 @@ import { User } from '../shared/models/user';
 export class UserManagementService {
 
     constructor(private http: HttpClient) {}
+<<<<<<< HEAD
+  
+    authenticate(authentication: Authentication): Observable<User> {
+        return this.http.post<User>("http://localhost:49849/api/user", authentication);
+=======
 
     authenticate(authentication: Authentication): Observable<User> {
         return this.http.post<User>('', authentication);
+>>>>>>> master
     }
 }

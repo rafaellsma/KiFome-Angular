@@ -9,7 +9,9 @@ import {
   MatInputModule,
   MatSidenavModule,
   MatMenuModule,
-  MatIconModule
+  MatIconModule,
+  MatTableModule,
+  MatDialogModule,
 } from '@angular/material';
 
 @NgModule({
@@ -23,7 +25,9 @@ import {
     BrowserAnimationsModule,
     MatSidenavModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatDialogModule
   ],
   declarations: []
 })
