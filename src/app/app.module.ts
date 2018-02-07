@@ -8,12 +8,10 @@ import { MaterialModule } from './material/material.module';
 import { SharedModule } from './shared/shared.module';
 import { HomePageModule } from './home-page/home-page.module';
 import { MenuManagementModule } from './menu-management/menu-management.module';
-<<<<<<< HEAD
 import { GarnishManagementModule } from './garnish-management/garnish-management.module';
 import { ReactiveFormsModule } from '@angular/forms';
-=======
 import { ProfileModule } from './profile/profile.module';
->>>>>>> master
+
 
 @NgModule({
   declarations: [
@@ -27,12 +25,9 @@ import { ProfileModule } from './profile/profile.module';
     AppRouting,
     SharedModule,
     MenuManagementModule,
-<<<<<<< HEAD
     GarnishManagementModule,
-    ReactiveFormsModule
-=======
+    ReactiveFormsModule,
     ProfileModule
->>>>>>> master
   ],
   providers: [],
   bootstrap: [AppComponent]
