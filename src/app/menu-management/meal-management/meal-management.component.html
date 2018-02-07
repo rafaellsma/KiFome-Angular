@@ -8,28 +8,23 @@
   <div class="example-container mat-elevation-z8">
       <mat-table #table [dataSource]="dataSource">
     
-        <!--- Note that these columns can be defined in any order.
-              The actual rendered columns are set as a property on the row definition" -->
-    
-        <!-- Position Column -->
         <ng-container matColumnDef="pratos">
           <mat-header-cell *matHeaderCellDef> Pratos</mat-header-cell>
           <mat-cell *matCellDef="let prato"> {{prato.pratos}} </mat-cell>
         </ng-container>
     
-        <!-- Name Column -->
         <ng-container matColumnDef="descricao">
           <mat-header-cell *matHeaderCellDef> Descrição </mat-header-cell>
           <mat-cell *matCellDef="let prato"> {{prato.descricao}} </mat-cell>
         </ng-container>
     
-        <!-- Weight Column -->
+      
         <ng-container matColumnDef="preco">
           <mat-header-cell *matHeaderCellDef> Preço </mat-header-cell>
           <mat-cell *matCellDef="let prato"> {{prato.preco}} </mat-cell>
         </ng-container>
     
-        <!-- Symbol Column -->
+      
         <ng-container matColumnDef="dias">
           <mat-header-cell *matHeaderCellDef> Dias Disponíveis </mat-header-cell>
           <mat-cell *matCellDef="let prato"> {{prato.dias}} </mat-cell>

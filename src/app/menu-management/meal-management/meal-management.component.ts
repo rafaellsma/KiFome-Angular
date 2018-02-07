@@ -12,7 +12,7 @@ export class MealManagementComponent implements OnInit {
   displayedColumns = ['pratos', 'descricao', 'preco', 'dias', 'guarnicoes'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  constructor(private dialog: MatDialog, private router:Router) { }
+  constructor(private dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
   }
@@ -23,7 +23,7 @@ export class MealManagementComponent implements OnInit {
     });
   }
 
-  addMeal(){
+  addMeal() {
     this.router.navigate(["/cadastrar-pratos"]);
   }
 }

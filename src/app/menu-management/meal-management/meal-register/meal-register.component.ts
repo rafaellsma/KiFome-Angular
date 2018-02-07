@@ -24,13 +24,13 @@ export class MealRegisterComponent implements OnInit {
   {id: 32, day: 'Sexta'},
   {id: 64, day: 'Sábado'},
   {id: 1, day: 'Domingo'}];
-  listDays: Array<String>;
+  listDays: Array<number>;
   garnishes: Array<Garnish>;
-  listGarnishes: Array<Garnish>;
+  listGarnishes: Array<number>;
   mealForm: FormGroup;
   constructor(private router: Router, private menuService: MenuManagementService, private fb: FormBuilder) {
-    this.listGarnishes = new Array<Garnish>();
-    this.listDays = new Array<String>();
+    this.listGarnishes = new Array<number>();
+    this.listDays = new Array<number>();
     this.mealForm = this.fb.group({
       meal: [null, Validators.required],
       description: [null, Validators.required],
@@ -61,19 +61,19 @@ export class MealRegisterComponent implements OnInit {
 
   addGarnishes(garnish: Garnish) {
     if (this.listGarnishes.length === 0) {
-      this.listGarnishes.push(garnish);
+      this.listGarnishes.push(garnish.Id);
     }else {
-      const index = this.listGarnishes.indexOf(garnish);
+      const index = this.listGarnishes.indexOf(garnish.Id);
       if (index !== -1) {
         this.listGarnishes.splice(index, 1);
       }else {
-        this.listGarnishes.push(garnish);
+        this.listGarnishes.push(garnish.Id);
       }
     }
     console.log(this.listGarnishes);
   }
 
-  addDays(Day: String) {
+  addDays(Day: number) {
     if (this.listDays.length === 0) {
       this.listDays.push(Day);
     }else {
@@ -91,8 +91,10 @@ export class MealRegisterComponent implements OnInit {
   SaveMeal () {
     const meal: Meal = this.mealForm.value;
     meal.Garnishies = this.listGarnishes;
-    meal.Days = this.listDays;
-    console.log(meal);
+    const dias = this.listDays.reduce( (x, y) => {
+      return x|y;
+    });
+    meal.Days = dias;
   }
 
   back() {

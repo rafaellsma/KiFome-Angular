@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuManagementComponent implements OnInit {
 
+  days: Array<String> = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'];
+  pratos = [{name: 'Salt'}, {name: 'Paprika'}, {name: 'Pepper'}];
   constructor() { }
 
   ngOnInit() {
+  }
+
+  viewMeal(meal, day) {
+    console.log(meal, day);
   }
 
 }

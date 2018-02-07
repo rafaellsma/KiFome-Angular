@@ -1,3 +1,19 @@
-<p>
-  menu-management works!
-</p>
+<div class="container">
+  <div class="col-12">
+      <h2 class="titleH2">Menu</h2>
+      <hr>
+  </div>
+  <br>
+  <mat-card class="col-10 offset-1">
+    <div class="row justify-content-center">
+      <div class="col-auto" *ngFor="let day of days">
+          <h4 class="titleH2">{{day}}</h4>
+          <hr>
+          <mat-list *ngFor="let p of pratos">
+              <mat-list-item><a href="javascript:void(0)" (click)="viewMeal(p, day)">{{p.name}}</a></mat-list-item>
+          </mat-list>
+      </div>
+      
+    </div>
+  </mat-card>
+</div>

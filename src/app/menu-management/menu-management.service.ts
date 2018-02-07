@@ -5,9 +5,9 @@ import { Garnish } from "../shared/models/garnish";
 
 @Injectable()
 export class MenuManagementService {
-    constructor(private http:HttpClient) {}
-    
-    GetGarnishies(): Observable<Garnish[]>{
-       return this.http.get<Garnish[]>("http://localhost:49849/api/garnishes");
+    constructor(private http: HttpClient) {}
+
+    GetGarnishies(): Observable<Garnish[]> {
+       return this.http.get<Garnish[]>('http://localhost:49849/api/garnishes');
     }
 }
