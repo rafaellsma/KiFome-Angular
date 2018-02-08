@@ -4,21 +4,26 @@
       <hr>
   </div>
   <div class="col-10">
-    <h4>Vendedor: {{menu.SellerName}}</h4>
-    <h4>Atendimento: {{menu.InitialTimeToOrder}} - {{menu.FinalTimeToOrder}}</h4>
-    <h4>Limite de Pratos: {{menu.LimitOfMeals}}</h4>
+    <h4 class="titleH2">Vendedor: {{menu.SellerName}}</h4>
+    <h4 class="titleH2">Atendimento: {{menu.InitialTimeToOrder}} - {{menu.FinalTimeToOrder}}</h4>
+    <h4 class="titleH2">Limite de Pratos: {{menu.LimitOfMeals}}</h4>
   </div>
   <br>
   <mat-card class="col-10 offset-1">
-    <div class="row justify-content-center">
-      <div class="col-auto" *ngFor="let day of days">
-          <h4 class="titleH2">{{day}}</h4>
+    <div class="row  justify-content-center">
+      <div class="col" *ngFor="let menu of mealList">
+          <h4 class="titleH2">{{menu.Day}}</h4>
           <hr>
-          <mat-list *ngFor="let p of pratos">
-              <mat-list-item><a href="javascript:void(0)" (click)="viewMeal(p, day)">{{p.name}}</a></mat-list-item>
+          <mat-list *ngFor="let meal of menu.Meals">
+              <mat-list-item><a href="javascript:void(0)" (click)="viewMeal(menu.Day, meal)">{{meal.Name}}</a></mat-list-item>
           </mat-list>
       </div>
       
     </div>
   </mat-card>
+  <br>
+  <div class="col-6 offset-4">
+      <button mat-raised-button (click)="addMeal()" color="primary">Adicionar Pratos</button>
+      <button mat-raised-button class="button-back" color="secondary">Voltar</button>  
+  </div>
 </div>

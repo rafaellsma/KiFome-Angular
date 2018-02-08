@@ -15,6 +15,7 @@ export class MealRegisterComponent implements OnInit {
   flag: boolean = false;
   flagSalvar: boolean = false;
   buttonFlag: boolean = true;
+  messageSuccess: boolean = false;
   typesOfShoes = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
   daysOfWeek: Array<any> = [
   {id: 2, day: 'Segunda'},
@@ -98,9 +99,16 @@ export class MealRegisterComponent implements OnInit {
     meal.Days = days;
     meal.MenuId = 1;
     this.menuService.CreateMeal(meal).subscribe(
-      response => console.log(response) 
+      response => this.setMessageSuccess()
     );
-    
+  }
+
+  setMessageSuccess() {
+    this.messageSuccess = true;
+    setTimeout(() => {
+      this.messageSuccess = false;
+      this.router.navigate(['/menu/1']);
+    }, 3000);
   }
 
   back() {

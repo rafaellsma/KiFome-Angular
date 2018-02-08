@@ -1,3 +1,10 @@
 .button-back{
     width:160px;
 }
+
+.successBox{
+    margin-left:12px; 
+    border: 1px solid rgb(64, 241, 20);
+    background-color:rgb(64, 241, 20);
+    transition: visibility 0s, opacity 0.5s linear;
+}

@@ -1,29 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource, MatDialog } from '@angular/material';
 import { ModalListGarnishComponent } from './modal-list-garnish/modal-list-garnish.component';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MenuManagementService } from '../menu-management.service';
-
+import { Meal } from '../../shared/models/meal';
 @Component({
   selector: 'app-meal-management',
   templateUrl: './meal-management.component.html',
   styleUrls: ['./meal-management.component.css']
 })
 export class MealManagementComponent implements OnInit {
-  displayedColumns = ['pratos', 'descricao', 'preco', 'dias', 'guarnicoes'];
+  displayedColumns = ['pratos', 'descricao', 'preco', 'dias', 'guarnicoes', 'acoes'];
   dataSource;
-
-  constructor(private dialog: MatDialog, private router: Router, private menuService:MenuManagementService) { }
+  id: number;
+  meal: Meal[];
+  constructor(private dialog: MatDialog, private router: Router, private menuService: MenuManagementService, 
+    private route: ActivatedRoute) {
+      this.meal = new Array<Meal>();
+      this.route.params.subscribe(
+        params => this.id = params['id']
+      );
+      console.log(this.id);
+   }
 
   ngOnInit() {
-    this.GetMeals();
+    this.GetMealById();
   }
 
-  GetMeals(){
-    this.menuService.GetMeals().subscribe(
+  GetMealById() {
+    this.menuService.GetMealById(this.id).subscribe(
       data => {
-        this.dataSource = new MatTableDataSource(data)
-        console.log(this.dataSource);
+        this.meal.push(data);
+        this.dataSource = new MatTableDataSource(this.meal);
       }
     );
   }
@@ -35,12 +43,6 @@ export class MealManagementComponent implements OnInit {
   }
 
   addMeal() {
-    this.router.navigate(["/cadastrar-pratos"]);
+    this.router.navigate(['/cadastrar-pratos']);
   }
 }
-
-const ELEMENT_DATA = [
-  {pratos: 1, descricao: 'Hydrogen', preco: 1.0079, dias: 'H'},
-  {pratos: 2, descricao: 'Helium', preco: 4.0026, dias: 'He'},
-  {pratos: 3, descricao: 'Lithium', preco: 6.941, dias: 'Li'}
-];

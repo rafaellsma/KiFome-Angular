@@ -35,6 +35,9 @@
                     </div>
             </div>
         </div>
+        <div class="col-12 successBox" *ngIf="messageSuccess">
+            <h4 class="titleH2">Prato Cadastrado com Sucesso!</h4>
+        </div>
         <div class="col-12" *ngIf="flag">
             <div class="offset-1">
                 <h3 class="titleH2">Selecione Guarnições:</h3>
@@ -58,4 +61,5 @@
             <button mat-raised-button (click)="listGarnishies()" color="secondary">Voltar</button>  
         </div>
     </form>
+    <br>
 </div>

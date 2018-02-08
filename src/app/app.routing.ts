@@ -23,7 +23,7 @@ const appRouting: Routes =
         path: 'pagina-inicial', component: HomePageComponent
     },
     {
-        path: 'pratos', component: MealManagementComponent
+        path: 'pratos/:id', component: MealManagementComponent
     },
     {
         path: 'cadastrar-pratos', component: MealRegisterComponent

@@ -8,12 +8,14 @@ import { MaterialModule } from '../material/material.module';
 import { ModalListGarnishComponent } from './meal-management/modal-list-garnish/modal-list-garnish.component';
 import { MenuManagementService } from './menu-management.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   declarations: [MenuManagementComponent,
     MealManagementComponent,

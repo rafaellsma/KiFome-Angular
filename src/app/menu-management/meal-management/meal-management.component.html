@@ -1,12 +1,12 @@
 <div class="container">
   <div class="top-header">
-      <h2 class="titleH2">Pratos</h2>
+      <h2 class="titleH2">Visualizar Prato</h2>
       <hr>
   </div>
   <br>
   <div class="col-12">
   <div class="example-container mat-elevation-z8">
-      <mat-table #table [dataSource]="dataSource">
+      <mat-table #table [dataSource]="dataSource" class="bottom">
     
         <ng-container matColumnDef="pratos">
           <mat-header-cell *matHeaderCellDef> Pratos</mat-header-cell>
@@ -34,6 +34,11 @@
             <mat-header-cell *matHeaderCellDef> Guarnições </mat-header-cell>
             <mat-cell *matCellDef="let prato"> <a href="javascript:void(0)" (click)="openDialog()">Ver Guarnições</a> </mat-cell>
          </ng-container>
+         
+         <ng-container matColumnDef="acoes">
+          <mat-header-cell *matHeaderCellDef> Ações </mat-header-cell>
+          <mat-cell *matCellDef="let prato"><a href="javascript:void(0)" routerLink="/cadastrar-pratos"><mat-icon>edit</mat-icon></a></mat-cell>
+       </ng-container>
       
     
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -41,10 +46,10 @@
       </mat-table>
     </div>
     <br>
-    <div class="col-6 offset-4">
+    <!-- <div class="col-6 offset-4">
         <button mat-raised-button (click)="addMeal()" color="primary">Adicionar Pratos</button>
         <button mat-raised-button class="button-back" (click)="backHome()" color="secondary">Voltar</button>  
-    </div>
+    </div> -->
     
   </div>
 </div>
