@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Authentication } from '../../shared/models/authentication';
 import { UserManagementService } from '../user-management.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../shared/service/auth.service';
 
 @Component({
   selector: 'app-user-authentication',
@@ -11,34 +12,31 @@ import { Router } from '@angular/router';
 })
 export class UserAuthenticationComponent implements OnInit {
   authForm: FormGroup;
-  constructor(private fb: FormBuilder, private userService: UserManagementService, private router: Router) {
 
-    this.authForm = this.fb.group({
-     authentication: this.fb.group({
-      email: [null, Validators.required],
-      password: [null, Validators.required]
-     })
-      
-    });
-
-   }
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+    this.createForm();
+  }
 
   ngOnInit() {
   }
-  
-  authenticate(){
-    let auth = this.authForm.value;
-    this.userService.authenticate(auth);
-    // .subscribe(
-    //   data => {
-    //     localStorage.setItem("loggedUser",JSON.stringify(data));
-    //     console.log(localStorage.getItem("loggedUser"));
-    //     if(JSON.parse(localStorage.getItem("loggedUser"))){
-    //       this.router.navigate(["/menu"]);
-    //     }
-    //   }
-    // );
-    
-    
+
+  createForm(){
+    this.authForm = this.fb.group({
+      Email: [null, Validators.required],
+      Password: [null, Validators.required]
+    });
+  }
+
+  authenticate() {
+    if (this.authForm.valid) {
+      const auth = <Authentication>this.authForm.value;
+      this.authService.login(auth)
+        .subscribe(
+          (data) => {
+            console.log('Usuário logado com sucesso');
+            console.log(data);
+          }
+        );
+    }
   }
 }
