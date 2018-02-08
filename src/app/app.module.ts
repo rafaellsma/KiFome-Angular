@@ -11,6 +11,8 @@ import { MenuManagementModule } from './menu-management/menu-management.module';
 import { GarnishManagementModule } from './garnish-management/garnish-management.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileModule } from './profile/profile.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/AuthInterceptor';
 
 
 @NgModule({
@@ -29,7 +31,13 @@ import { ProfileModule } from './profile/profile.module';
     ReactiveFormsModule,
     ProfileModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
