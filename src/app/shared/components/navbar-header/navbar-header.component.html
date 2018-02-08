@@ -1,12 +1,13 @@
 <nav class="navbar">
     <div class="row">
         <div class="col-4 logo">
-            <h1 class="logo headline"><a href="#">KiFome</a></h1>
+            <h1 class="logo headline"><a href="">KiFome</a></h1>
         </div>
         <div class="col-8 items">
             <div *ngIf="this.showMenu | async" >
                 <button class="float-right" mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>face</mat-icon></button>
                 <mat-menu #menu="matMenu">
+                    <a mat-menu-item routerLink="/acompanhamentos">Cadastrar guarnições</a>
                     <a mat-menu-item (click)="logout()">Sair</a>
                 </mat-menu>
             </div>

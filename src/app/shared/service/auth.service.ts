@@ -11,6 +11,7 @@ import { HttpParams, HttpHeaders, HttpClient } from '@angular/common/http';
 export class AuthService {
     private loggedInAsync = new BehaviorSubject<boolean>(false);
         get isLoggedInAsync() {
+            this.loggedInAsync.next(this.isLoggedIn());
             return this.loggedInAsync.asObservable();
         }
     constructor(private http: HttpClient) {}
