@@ -1,40 +1,67 @@
 <div class="container">
   <div class="mat-elevation-z8">
     <mat-horizontal-stepper linear>
-      <mat-step label="Escolha o Cozinheiro">
-        <h1>Cozinheiros</h1>
-        <mat-radio-group>
-          <div *ngFor="let seller of sellers">
-            <mat-radio-button [value]="seller.Id">
-              <app-seller [seller]="seller"></app-seller>
-            </mat-radio-button>
+      <mat-step label="Escolha o Cozinheiro" [stepControl]="sellerForm">
+        <form [formGroup]="sellerForm">
+          <h1>Cozinheiros</h1>
+          <mat-radio-group formControlName="cozinheiro">
+            <div *ngFor="let seller of sellers">
+              <mat-radio-button [value]="seller.Id">
+                <app-seller [seller]="seller"></app-seller>
+              </mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <br>
+          <div>
+            <button mat-raised-button matStepperNext color="primary" (click)="ngOnSellerNext()">Próximo</button>
           </div>
-        </mat-radio-group>
-        <br>
-        <div>
-          <button mat-raised-button matStepperNext color="primary">Próximo</button>
-        </div>
+        </form>
       </mat-step>
-      <mat-step label="Escolha o Local de Retirada">
-        <h1>Locais</h1>
-        <div>
+      <mat-step label="Escolha o Local de Retirada" [stepControl]="withdrawalForm">
+        <form [formGroup]="withdrawalForm">
+          <h1>Locais</h1>
+          <mat-radio-group formControlName="local">
+            <div *ngFor="let withdrawal of withdrawals">
+              <mat-radio-button [value]="withdrawal.SellerId">
+                <app-local [withdrawal]="withdrawal"></app-local>
+              </mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div>
+              <button mat-button matStepperPrevious color="primary">Anterior</button>
+              <button mat-raised-button matStepperNext color="primary" (click)="ngOnWithdrawalNext()">Próximo</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step label="Escolha o Prato" [stepControl]="mealForm">
+        <form [formGroup]="mealForm">
+          <h1>Pratos</h1>
+          <mat-radio-group formControlName="prato">
+            <div *ngFor="let meal of meals">
+              <mat-radio-button [value]="meal.Id">
+                <app-order-meal [meal]="meal"></app-order-meal>
+              </mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div>
+            <button mat-button matStepperPrevious color="primary">Anterior</button>
+            <button mat-raised-button matStepperNext color="primary" (click)="ngOnMealNext()">Próximo</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step label="Escolha os Acompanhamentos" [stepControl]="garnishForm">
+        <form [formGroup]="garnishForm">
+          <h1>Acompanhamentos</h1>
+          <div *ngFor="let garnish of garnishies">
+              <mat-checkbox [value]="garnish.Id">
+                <app-order-garnish [garnish]="garnish"></app-order-garnish>
+              </mat-checkbox>
+          </div>
+          <div>
             <button mat-button matStepperPrevious color="primary">Anterior</button>
             <button mat-raised-button matStepperNext color="primary">Próximo</button>
-        </div>
-      </mat-step>
-      <mat-step label="Escolha o Prato">
-        <h1>Pratos</h1>
-        <div>
-          <button mat-button matStepperPrevious color="primary">Anterior</button>
-          <button mat-raised-button matStepperNext color="primary">Próximo</button>
-        </div>
-      </mat-step>
-      <mat-step label="Escolha os Acompanhamentos">
-        <h1>Acompanhamentos</h1>
-        <div>
-          <button mat-button matStepperPrevious color="primary">Anterior</button>
-          <button mat-raised-button matStepperNext color="primary">Próximo</button>
-        </div>
+          </div>
+        </form>
       </mat-step>
       <mat-step label="Revise seu Pedido">
         <h1>Revisão</h1>

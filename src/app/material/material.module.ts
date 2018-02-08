@@ -11,7 +11,8 @@ import {
   MatMenuModule,
   MatIconModule,
   MatStepperModule,
-  MatRadioModule
+  MatRadioModule,
+  MatCheckboxModule
 } from '@angular/material';
 
 @NgModule({
@@ -27,7 +28,8 @@ import {
     MatMenuModule,
     MatIconModule,
     MatStepperModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCheckboxModule
   ],
   declarations: []
 })

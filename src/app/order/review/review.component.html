@@ -1,0 +1,8 @@
+<h3>Cozinheiro: {{review.Seller.Name}}</h3>
+<h3>Local de Retirada: {{review.Withdrawal.Street}}, {{review.Withdrawal.Number}}. CEP: {{review.Withdrawal.CEP}}</h3>
+<h3>Horário de Retirada: das {{review.Withdrawal.InitialHour}} as {{review.Withdrawal.FinalHour}}</h3>
+<h3>Prato: {{review.Meal.Name}}</h3>
+<h3>Acompanhamentos:</h3>
+<div *ngFor="let garnish of review.Garnishies">
+  <h3>{{garnish.Name}}</h3>
+</div>
