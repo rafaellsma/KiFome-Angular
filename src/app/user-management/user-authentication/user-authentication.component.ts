@@ -15,7 +15,7 @@ export class UserAuthenticationComponent implements OnInit {
 
     this.authForm = this.fb.group({
      authentication: this.fb.group({
-      email: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
       password: [null, Validators.required]
      })
       
@@ -27,18 +27,8 @@ export class UserAuthenticationComponent implements OnInit {
   }
   
   authenticate(){
-    let auth = this.authForm.value;
-    this.userService.authenticate(auth);
-    // .subscribe(
-    //   data => {
-    //     localStorage.setItem("loggedUser",JSON.stringify(data));
-    //     console.log(localStorage.getItem("loggedUser"));
-    //     if(JSON.parse(localStorage.getItem("loggedUser"))){
-    //       this.router.navigate(["/menu"]);
-    //     }
-    //   }
-    // );
-    
-    
+    if(this.authForm.valid){
+      let auth = this.authForm.value;
+    }
   }
 }
