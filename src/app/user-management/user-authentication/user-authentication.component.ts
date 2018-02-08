@@ -13,14 +13,14 @@ import { AuthService } from '../../shared/service/auth.service';
 export class UserAuthenticationComponent implements OnInit {
   authForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private fb: FormBuilder, private userService: UserManagementService, private router: Router) {
     this.createForm();
   }
 
   ngOnInit() {
   }
 
-  createForm(){
+  createForm() {
     this.authForm = this.fb.group({
       Email: [null, Validators.required],
       Password: [null, Validators.required]
@@ -30,7 +30,7 @@ export class UserAuthenticationComponent implements OnInit {
   authenticate() {
     if (this.authForm.valid) {
       const auth = <Authentication>this.authForm.value;
-      this.authService.login(auth)
+      this.userService.login(auth)
         .subscribe(
           (data) => {
             console.log('Usuário logado com sucesso');
