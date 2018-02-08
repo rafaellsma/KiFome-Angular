@@ -32,7 +32,7 @@ const appRouting: Routes =
         path: 'alterar-pratos', component: MealUpdateComponent
     },
     {
-        path: 'menu', component: MenuManagementComponent
+        path: 'menu/:id', component: MenuManagementComponent
     }
 ];
 

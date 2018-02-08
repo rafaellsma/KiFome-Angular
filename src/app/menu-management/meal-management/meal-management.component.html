@@ -10,24 +10,24 @@
     
         <ng-container matColumnDef="pratos">
           <mat-header-cell *matHeaderCellDef> Pratos</mat-header-cell>
-          <mat-cell *matCellDef="let prato"> {{prato.pratos}} </mat-cell>
+          <mat-cell *matCellDef="let prato"> {{prato.Name}} </mat-cell>
         </ng-container>
     
         <ng-container matColumnDef="descricao">
           <mat-header-cell *matHeaderCellDef> Descrição </mat-header-cell>
-          <mat-cell *matCellDef="let prato"> {{prato.descricao}} </mat-cell>
+          <mat-cell *matCellDef="let prato"> {{prato.Description}} </mat-cell>
         </ng-container>
     
       
         <ng-container matColumnDef="preco">
           <mat-header-cell *matHeaderCellDef> Preço </mat-header-cell>
-          <mat-cell *matCellDef="let prato"> {{prato.preco}} </mat-cell>
+          <mat-cell *matCellDef="let prato"> {{prato.Price}} </mat-cell>
         </ng-container>
     
       
         <ng-container matColumnDef="dias">
           <mat-header-cell *matHeaderCellDef> Dias Disponíveis </mat-header-cell>
-          <mat-cell *matCellDef="let prato"> {{prato.dias}} </mat-cell>
+          <mat-cell *matCellDef="let prato"> {{prato.Days}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="guarnicoes">
@@ -43,7 +43,7 @@
     <br>
     <div class="col-6 offset-4">
         <button mat-raised-button (click)="addMeal()" color="primary">Adicionar Pratos</button>
-        <button mat-raised-button class="button-back" (click)="backHome()" color="primary">Voltar</button>  
+        <button mat-raised-button class="button-back" (click)="backHome()" color="secondary">Voltar</button>  
     </div>
     
   </div>

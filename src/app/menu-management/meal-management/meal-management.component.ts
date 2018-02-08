@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource, MatDialog } from '@angular/material';
 import { ModalListGarnishComponent } from './modal-list-garnish/modal-list-garnish.component';
 import { Router } from '@angular/router';
+import { MenuManagementService } from '../menu-management.service';
 
 @Component({
   selector: 'app-meal-management',
@@ -10,11 +11,21 @@ import { Router } from '@angular/router';
 })
 export class MealManagementComponent implements OnInit {
   displayedColumns = ['pratos', 'descricao', 'preco', 'dias', 'guarnicoes'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource;
 
-  constructor(private dialog: MatDialog, private router: Router) { }
+  constructor(private dialog: MatDialog, private router: Router, private menuService:MenuManagementService) { }
 
   ngOnInit() {
+    this.GetMeals();
+  }
+
+  GetMeals(){
+    this.menuService.GetMeals().subscribe(
+      data => {
+        this.dataSource = new MatTableDataSource(data)
+        console.log(this.dataSource);
+      }
+    );
   }
 
   openDialog() {

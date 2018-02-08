@@ -32,15 +32,16 @@ export class MealRegisterComponent implements OnInit {
     this.listGarnishes = new Array<number>();
     this.listDays = new Array<number>();
     this.mealForm = this.fb.group({
-      meal: [null, Validators.required],
-      description: [null, Validators.required],
-      price: [null, Validators.required]
+      Name: [null, Validators.required],
+      Description: [null, Validators.required],
+      Price: [null, Validators.required],
+      limitGarnish: [null, Validators.required]
     });
 
   }
 
   ngOnInit() {
-    // this.GetGarnishies();
+    this.GetGarnishies();
   }
 
   GetGarnishies() {
@@ -90,11 +91,16 @@ export class MealRegisterComponent implements OnInit {
 
   SaveMeal () {
     const meal: Meal = this.mealForm.value;
-    meal.Garnishies = this.listGarnishes;
-    const dias = this.listDays.reduce( (x, y) => {
-      return x|y;
+    meal.GarnishiesId = this.listGarnishes;
+    const days = this.listDays.reduce((x,y) => {
+      return x | y;
     });
-    meal.Days = dias;
+    meal.Days = days;
+    meal.MenuId = 1;
+    this.menuService.CreateMeal(meal).subscribe(
+      response => console.log(response) 
+    );
+    
   }
 
   back() {

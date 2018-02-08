@@ -9,17 +9,22 @@
             <div class="col-5"> 
                 <div class="col-12">
                     <mat-form-field class="full-width" >
-                        <input type="text" formControlName="meal" matInput placeholder="Prato">
+                        <input type="text" formControlName="Name" matInput placeholder="Prato">
                     </mat-form-field>
                 </div>
                 <div class="col-12">
                     <mat-form-field class="full-width" >
-                        <input type="text" formControlName="description" matInput placeholder="Descrição">
+                        <input type="text" formControlName="Description" matInput placeholder="Descrição">
                     </mat-form-field>
                 </div>
                 <div class="col-12">
                     <mat-form-field class="full-width" >
-                        <input type="text" formControlName="price" matInput placeholder="Preço">
+                        <input type="text" formControlName="Price" matInput placeholder="Preço">
+                    </mat-form-field>
+                </div>
+                <div class="col-12">
+                    <mat-form-field class="full-width" >
+                        <input type="text" formControlName="limitGarnish" matInput placeholder="Limite Garnições">
                     </mat-form-field>
                 </div>
             </div>
@@ -36,8 +41,8 @@
             </div>
             <div class="col-6 offset-3">
                 <mat-selection-list #shoes>
-                    <mat-list-option (click)="addGarnishes(garnish)" *ngFor="let garnish of typesOfShoes">
-                        {{garnish}}
+                    <mat-list-option (click)="addGarnishes(garnish)" *ngFor="let garnish of garnishes">
+                        {{garnish.Name}}
                     </mat-list-option>
                 </mat-selection-list>
             </div>
