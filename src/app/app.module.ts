@@ -14,6 +14,8 @@ import { ProfileModule } from './profile/profile.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/AuthInterceptor';
 import { UnauthorizedInterceptor } from './interceptors/UnauthorizedInterceptor';
+import { UnauthenticatedGuardService } from './guards/UnauthenticatedGuard.service';
+import { AuthenticatedGuardService } from './guards/AuthenticatedGuard.service';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { UnauthorizedInterceptor } from './interceptors/UnauthorizedInterceptor'
       provide: HTTP_INTERCEPTORS,
       useClass: UnauthorizedInterceptor,
       multi: true
-    }
+    },
+    AuthenticatedGuardService,
+    UnauthenticatedGuardService
   ],
   bootstrap: [AppComponent]
 })

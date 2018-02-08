@@ -4,6 +4,7 @@ import { Authentication } from '../../shared/models/authentication';
 import { UserManagementService } from '../user-management.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/service/auth.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-user-authentication',
@@ -13,7 +14,7 @@ import { AuthService } from '../../shared/service/auth.service';
 export class UserAuthenticationComponent implements OnInit {
   authForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: UserManagementService, private router: Router) {
+  constructor(private snackBar: MatSnackBar, private fb: FormBuilder, private auth: AuthService, private router: Router) {
     this.createForm();
   }
 
@@ -30,11 +31,13 @@ export class UserAuthenticationComponent implements OnInit {
   authenticate() {
     if (this.authForm.valid) {
       const auth = <Authentication>this.authForm.value;
-      this.userService.login(auth)
+      this.auth.login(auth)
         .subscribe(
-          (data) => {
-            console.log('Usuário logado com sucesso');
-            console.log(data);
+          () => {
+            this.snackBar.open('Usuário logado com sucesso', 'Fechar', {
+              duration: 3000
+            });
+            this.router.navigateByUrl('perfil');
           }
         );
     }

@@ -4,10 +4,16 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/shareReplay';
 import * as moment from 'moment';
 import { User } from '../models/user';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { HttpParams, HttpHeaders, HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
-    constructor() {}
+    private loggedInAsync = new BehaviorSubject<boolean>(false);
+        get isLoggedInAsync() {
+            return this.loggedInAsync.asObservable();
+        }
+    constructor(private http: HttpClient) {}
 
     logout() {
         localStorage.removeItem('access_token');
@@ -15,6 +21,38 @@ export class AuthService {
         localStorage.removeItem('user_id');
         localStorage.removeItem('user_name');
         localStorage.removeItem('user_email');
+        this.loggedInAsync.next(false);
+    }
+
+    login(auth: Authentication) {
+        const url = 'http://localhost:49849/token';
+
+        const body = new HttpParams()
+            .set('email', auth.Email)
+            .set('password', auth.Password)
+            .set('grant_type', 'password');
+
+        const headers = {
+            headers: new HttpHeaders()
+                .set('Content-Type', 'application/x-www-form-urlencoded')
+        };
+
+        return this.http.post(url, body, headers)
+            .do(res => {
+                this.setSession(res);
+                this.loggedInAsync.next(true);
+            })
+            .shareReplay();
+    }
+
+    private setSession(authResult) {
+        const expiresAt = moment().add(authResult.expires_in, 'second');
+
+        localStorage.setItem('access_token', authResult.access_token);
+        localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()) );
+        localStorage.setItem('user_id', authResult.id);
+        localStorage.setItem('user_name', authResult.name);
+        localStorage.setItem('user_email', authResult.email);
     }
 
     isLoggedIn() {
