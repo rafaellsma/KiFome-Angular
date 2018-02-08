@@ -40,6 +40,7 @@ export class UserAuthenticationComponent implements OnInit {
             this.router.navigateByUrl('perfil');
           }
         );
+
     }
   }
 }
