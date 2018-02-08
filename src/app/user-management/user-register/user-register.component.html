@@ -1,18 +1,28 @@
 <mat-card>
     <h2>Cadastrar Usuário</h2>
     <mat-divider></mat-divider>
-    <mat-form-field class="full-width" floatLabel="never">
-        <input type="text" matInput placeholder="Nome">
-    </mat-form-field>
-    <mat-form-field class="full-width" floatLabel="never">
-        <input type="text" matInput placeholder="Email">
-    </mat-form-field>
-    <mat-form-field class="full-width" floatLabel="never">
-        <input type="password" matInput placeholder="Senha">
-    </mat-form-field>
-    <mat-form-field class="full-width" floatLabel="never">
-        <input type="password" matInput placeholder="Confirme a senha">
-    </mat-form-field>
-    <button mat-raised-button class="full-width" color="primary">Salvar</button>
-    <!-- <button mat-button>Voltar</button>   -->
+    <form [formGroup]="registerForm" novalidate>
+        <mat-form-field class="full-width" floatLabel="never">
+            <input type="text" matInput formControlName="Name" placeholder="Nome">
+            <mat-error *ngIf="registerForm.controls['Name'].errors?.required">Você deve digitar um nome</mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width" floatLabel="never">
+            <input type="text" matInput formControlName="Email" placeholder="Email">
+            <mat-error *ngIf="registerForm.controls['Email'].errors?.required">Você deve digitar um email</mat-error>
+            <mat-error *ngIf="registerForm.controls['Email'].errors?.email && registerForm.controls['Email'].value">Formato de email invalido</mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width" floatLabel="never">
+            <input type="password" matInput formControlName="Password" placeholder="Senha">
+            <mat-error *ngIf="registerForm.controls['Password'].errors?.required">Você deve digitar uma senha</mat-error>
+            <mat-error *ngIf="registerForm.controls['Password'].errors?.minlength || registerForm.controls['Password'].errors?.maxlength">Sua senha precisa ter entre 6 e 25 caracteres</mat-error>
+            <mat-error *ngIf="registerForm.controls['Password'].errors?.passwordsDifferents">Senhas digitadas são diferentes</mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width" floatLabel="never">
+            <input type="password" matInput formControlName="ConfirmPassword" placeholder="Confirme a senha">
+            <mat-error *ngIf="registerForm.controls['ConfirmPassword'].errors?.required">Confirme sua senha</mat-error>
+            <mat-error *ngIf="registerForm.controls['ConfirmPassword'].errors?.minlength || registerForm.controls['ConfirmPassword'].errors?.maxlength">Sua senha precisa ter entre 6 e 25 caracteres</mat-error>
+            <mat-error *ngIf="registerForm.controls['ConfirmPassword'].errors?.passwordsDifferents">Senhas digitadas são diferentes</mat-error>
+        </mat-form-field>
+        <button type="submit" (click)="onSubmit()" mat-raised-button class="full-width" color="primary">Salvar</button>
+    </form>
 </mat-card>

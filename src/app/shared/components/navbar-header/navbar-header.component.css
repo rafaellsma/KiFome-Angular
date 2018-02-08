@@ -102,3 +102,7 @@
       display: none;
     }
   }
+
+.float-right {
+  float: right !important;
+}

@@ -9,16 +9,22 @@ import { MealManagementComponent } from './menu-management/meal-management/meal-
 import { MenuManagementComponent } from './menu-management/menu-management.component';
 import { ListGarnishesComponent } from './garnish-management/list-garnishes/list-garnishes.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UnauthenticatedGuardService } from './guards/UnauthenticatedGuard.service';
+import { AuthenticatedGuardService } from './guards/AuthenticatedGuard.service';
 
 
 
 const appRouting: Routes =
 [
     {
-        path: 'gerenciamento-usuario', component: UserManagementComponent
+        path: 'gerenciamento-usuario',
+        component: UserManagementComponent,
+        canActivate: [UnauthenticatedGuardService]
     },
     {
-        path: '', component: HomePageComponent
+        path: '',
+        component: HomePageComponent,
+        canActivate: [UnauthenticatedGuardService]
     },
     {
         path: 'prato', component: MealManagementComponent
@@ -27,10 +33,14 @@ const appRouting: Routes =
         path: 'menu', component: MenuManagementComponent
     },
     {
-        path: 'acompanhamentos', component: ListGarnishesComponent
+        path: 'acompanhamentos',
+        component: ListGarnishesComponent,
+        canActivate: [AuthenticatedGuardService]
     },
     {
-         path: 'perfil', component: ProfileComponent
+         path: 'perfil',
+         component: ProfileComponent,
+         canActivate: [AuthenticatedGuardService]
     }
 ];
 
