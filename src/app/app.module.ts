@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileModule } from './profile/profile.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/AuthInterceptor';
+import { UnauthorizedInterceptor } from './interceptors/UnauthorizedInterceptor';
 
 
 @NgModule({
@@ -35,6 +36,11 @@ import { AuthInterceptor } from './interceptors/AuthInterceptor';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UnauthorizedInterceptor,
       multi: true
     }
   ],
